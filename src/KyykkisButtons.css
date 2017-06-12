@@ -39,7 +39,7 @@
 
 @media all and (max-width: 767px) {
   .KyykkisButtons__button {
-    background-color: rgba(255, 0, 65, 0.2);
+    background-color: #f04;
     color: #fff;
     min-height: 150px;
     flex-basis: 150px;

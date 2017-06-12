@@ -41,6 +41,7 @@
   text-transform: uppercase;
   justify-content: center;
   transform: translate3d(0, 0, 0);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 1);
 }
 
 @media all and (max-width: 767px) {
@@ -50,17 +51,17 @@
 }
 
 .KyykkisHeader span:nth-child(2) {
-  opacity: 0.3;
+  /*opacity: 0.3;*/
   transform: translate3d(0, 0, -10vh);
 }
 
 .KyykkisHeader span:nth-child(3) {
-  opacity: 0.2;
+  /*opacity: 0.2;*/
   transform: translate3d(0, 0, -20vh);
 }
 
 .KyykkisHeader span:nth-child(4) {
-  opacity: 0.15;
+  /*opacity: 0.15;*/
   transform: translate3d(0, 0, -30vh);
 }
 
