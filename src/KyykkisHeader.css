@@ -1,0 +1,78 @@
+.KyykkisHeader {
+  position: relative;
+  display: flex;
+  left: 0;
+  right: 0;
+  flex: 1;
+  height: 200px;
+  max-height: 200px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Monoton', sans-serif;
+  font-size: 70px;
+  text-align: center;
+  color: #f04;
+  animation-name: KyykkisHeader__enter;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(.61,.01,.05,1);
+  animation-iteration-count: 1;
+  transform-style: preserve-3d;
+}
+
+@media all and (max-width: 1024px) {
+  .KyykkisHeader {
+    font-size: 50px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .KyykkisHeader {
+    font-size: 7vw;
+  }
+}
+
+.KyykkisHeader span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  justify-content: center;
+  transform: translate3d(0, 0, 0);
+}
+
+@media all and (max-width: 767px) {
+  .KyykkisHeader span {
+    top: calc(50% - 5vw);
+  }
+}
+
+.KyykkisHeader span:nth-child(2) {
+  opacity: 0.3;
+  transform: translate3d(0, 0, -10vh);
+}
+
+.KyykkisHeader span:nth-child(3) {
+  opacity: 0.2;
+  transform: translate3d(0, 0, -20vh);
+}
+
+.KyykkisHeader span:nth-child(4) {
+  opacity: 0.15;
+  transform: translate3d(0, 0, -30vh);
+}
+
+
+@keyframes KyykkisHeader__enter {
+  0% {
+    transform:
+      translate3d(0, calc(50vh - 60px), 0)
+  }
+
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+  }
+}

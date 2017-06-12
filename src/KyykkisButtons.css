@@ -1,0 +1,312 @@
+.KyykkisButtons {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-items: stretch;
+  padding: 10px;
+  max-height: 800px;
+  animation-name: KyykkisButtons__enter;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(.61,.01,.05,1);
+  animation-iteration-count: 1;
+}
+
+.KyykkisButtons__button {
+  display: flex;
+  flex: 1 0 200px;
+  min-height: 100px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+  color: #f04;
+  font-family: Heebo, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  background-color: transparent;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0);
+  transition-property: background-color, transform, opacity;
+  transition-duration: 100ms, 400ms, 2s;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+}
+
+@media all and (max-width: 767px) {
+  .KyykkisButtons__button {
+    background-color: rgba(255, 0, 65, 0.2);
+    color: #fff;
+    min-height: 150px;
+    flex-basis: 150px;
+  }
+}
+
+.KyykkisButtons__button:focus {
+  outline: none;
+}
+
+.KyykkisButtons__button--exploding {
+  opacity: 0;
+  transition: none;
+}
+
+.KyykkisButtons__button:hover {
+  background-color: #f04;
+  color: #fff;
+  transform: translate3d(0, 0, 20px);
+  box-shadow: 0 20px 4px -10px rgba(255, 0, 64, 0.1);
+}
+
+@media all and (max-width: 767px) {
+  .KyykkisButtons__button:hover {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.KyykkisButtons__button span {
+  user-select: none;
+}
+
+
+
+
+.KyykkisButtons__explosions {
+  position: absolute;
+  top: -10px; /* counter KyykkisButtons padding */
+  left: -10px; /* counter KyykkisButtons padding */
+}
+
+.KyykkisButtons__explosion {
+  position: absolute;
+  transform: translate3d(0, 0, 20px);
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+@media all and (max-width: 767px) {
+  .KyykkisButtons__explosion {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.KyykkisButtons__explosion::after {
+  content: '💥';
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 120px;
+  transform: translate3d(0, 0, 0);
+}
+
+.KyykkisButtons__explosion .KyykkisButtons__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f04;
+  color: #fff;
+  animation-duration: 800ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(.25,1.61,1,1.05);
+}
+
+.KyykkisButtons__explosion .KyykkisButtons__button:nth-child(1) {
+  animation-name: KyykkisButtons__explosion1;
+}
+
+.KyykkisButtons__explosion .KyykkisButtons__button:nth-child(2) {
+  animation-name: KyykkisButtons__explosion2;
+}
+
+.KyykkisButtons__explosion .KyykkisButtons__button:nth-child(3) {
+  animation-name: KyykkisButtons__explosion3;
+}
+
+.KyykkisButtons__explosion .KyykkisButtons__button:nth-child(4) {
+  animation-name: KyykkisButtons__explosion4;
+}
+
+.KyykkisButtons__explosion .KyykkisButtons__button:nth-child(5) {
+  animation-name: KyykkisButtons__explosion5;
+}
+
+.KyykkisButtons__explosion .KyykkisButtons__button:nth-child(6) {
+  animation-name: KyykkisButtons__explosion6;
+}
+
+.KyykkisButtons__explosion .KyykkisButtons__button:nth-child(7) {
+  animation-name: KyykkisButtons__explosion7;
+}
+
+.KyykkisButtons__explosion .KyykkisButtons__button:nth-child(8) {
+  animation-name: KyykkisButtons__explosion8;
+}
+
+.KyykkisButtons__explosion .KyykkisButtons__button:nth-child(9) {
+  animation-name: KyykkisButtons__explosion9;
+}
+
+
+@keyframes KyykkisButtons__enter {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, calc(50vh - 60px), 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes KyykkisButtons__explosionRotate {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 15deg);
+  }
+}
+
+
+
+
+
+
+
+
+@keyframes KyykkisButtons__explosion1 {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-80px, -80px, 40px);
+  }
+}
+
+@keyframes KyykkisButtons__explosion2 {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -80px, 40px);
+  }
+}
+
+@keyframes KyykkisButtons__explosion3 {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(80px, -80px, 40px);
+  }
+}
+
+@keyframes KyykkisButtons__explosion4 {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-100px, -20px, 40px);
+  }
+}
+
+@keyframes KyykkisButtons__explosion5 {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 40px);
+  }
+}
+
+@keyframes KyykkisButtons__explosion6 {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(100px, -20px, 40px);
+  }
+}
+
+@keyframes KyykkisButtons__explosion7 {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-80px, 40px, 40px);
+  }
+}
+
+@keyframes KyykkisButtons__explosion8 {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 40px, 40px);
+  }
+}
+
+@keyframes KyykkisButtons__explosion9 {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(80px, 40px, 40px);
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "kyykkishotline",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "shortid": "^2.2.8",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "yarn build && firebase deploy",
+    "deploy-fns": "firebase deploy --only functions"
+  }
+}
