@@ -2,7 +2,8 @@
   "rules": {
     "messages": {
       ".write": "false",
-      ".read": "true"
+      ".read": "true",
+      ".indexOn": "unixTimeStamp"
     },
     "new": {
       "message": {

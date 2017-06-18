@@ -2,12 +2,13 @@ import 'whatwg-fetch'
 import { getUid } from './helpers'
 
 const getRandomTigerGif = () => {
-  return fetch('http://api.giphy.com/v1/gifs/search?q=tiger&api_key=dc6zaTOxFJmzC')
+  return fetch('https://api.giphy.com/v1/gifs/search?q=tiger&api_key=dc6zaTOxFJmzC')
   .then(res => res.json())
   .then(res => res.data)
   .then(images => {
     const selected = parseInt(Math.random() * images.length, 10)
-    return `*TIKRU* ${images[selected].url}`
+    console.log(images[selected])
+    return `*TIKRU* ${images[selected].images.original.url}`
   })
 }
 
