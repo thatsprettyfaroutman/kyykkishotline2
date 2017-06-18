@@ -1,5 +1,9 @@
 {
   "rules": {
+    "messages": {
+      ".write": "false",
+      ".read": "true"
+    },
     "new": {
       "message": {
         ".write": "true",
