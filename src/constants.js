@@ -1,11 +1,18 @@
+import 'whatwg-fetch'
 import { getUid } from './helpers'
+
+const getRandomTigerGif = () => {
+  return fetch('http://api.giphy.com/v1/gifs/search?q=tiger&api_key=dc6zaTOxFJmzC')
+  .then(res => res.json())
+  .then(res => res.data)
+  .then(images => {
+    const selected = parseInt(Math.random() * images.length, 10)
+    return `*TIKRU* ${images[selected].url}`
+  })
+}
 
 export const MESSAGES = [
   {
-    id: getUid(),
-    title: 'Seuraa',
-    getContent: () => Promise.resolve('*SEURAAAA!*'),
-  }, {
     id: getUid(),
     title: 'Kahvia',
     getContent: () => Promise.resolve('*KAHVIAAA!*'),
@@ -16,7 +23,7 @@ export const MESSAGES = [
   }, {
     id: getUid(),
     title: 'Vittu Luffis',
-    getContent: () => Promise.resolve('*Vittu Luffis* :tillintallin::bee:'),
+    getContent: () => Promise.resolve('*Vittu Luffis* :tillintallin::busybee:'),
   }, {
     id: getUid(),
     title: 'Nälkä',
@@ -40,7 +47,7 @@ export const MESSAGES = [
   }, {
     id: getUid(),
     title: 'Pärisee',
-    getContent: () => Promise.resolve(':bee:'),
+    getContent: () => Promise.resolve(':busybee:'),
   }, {
     id: getUid(),
     title: 'Karttii',
@@ -49,17 +56,9 @@ export const MESSAGES = [
     id: getUid(),
     title: 'Luffis dublin',
     getContent: () => Promise.resolve(':busybee_tippuu:\n:bathtub:'),
+  }, {
+    id: getUid(),
+    title: 'Custom',
+    getContent: () => Promise.resolve(prompt('Terkut Kyykkikselle:')),
   },
 ]
-
-
-
-const getRandomTigerGif = () => {
-  return fetch('http://api.giphy.com/v1/gifs/search?q=tiger&api_key=dc6zaTOxFJmzC')
-  .then(res => res.json())
-  .then(res => res.data)
-  .then(images => {
-    const selected = parseInt(Math.random() * images.length, 10)
-    return `*TIKRU* ${images[selected].url}`
-  })
-}

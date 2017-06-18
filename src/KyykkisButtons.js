@@ -4,16 +4,22 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import { MESSAGES } from './constants'
 import { playBoom, prefixStyle } from './helpers'
+import { sendMessage } from './services/firebase'
+import { sendMessageToSlack } from './services/slack'
 
 export default class extends Component {
   constructor() {
     super()
-    this.state = { explosions: [], explosionIds: [] }
+    this.state = { sending: false, explosions: [], explosionIds: [] }
     this.doms = {}
   }
 
   onClick(message) {
     this.explode(message)
+    message.getContent().then( messageText => {
+      sendMessage(messageText)
+      sendMessageToSlack(messageText)
+    })
   }
 
   explode(message) {
